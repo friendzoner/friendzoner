@@ -1,8 +1,13 @@
 /* TEAM */
 
-Your title: Angelo Giacco
+Name: Angelo Giacco
 Email: giacco.angelo.s@gmail.com
 Twitter: @giaccoangelo
+Website: https://angelogiacco.github.io/me/
+
+Name: William Stairs
+Email: stairswjc@gmail.com
+Website: http://oundle.work
 
 
 
