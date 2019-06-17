@@ -7,7 +7,17 @@
 
 ## Description
 
-A GitHub app that automatically follows all users that contribute to one of your repositories!
+>A GitHub app built with [Probot](https://github.com/probot/probot) that automatically follows all users that contribute to one of your repositories!
+
+## Setup
+
+```sh
+# Install dependencies
+npm install
+
+# Run the bot
+npm start
+```
 
 ## 📌 Contributing Countries
 
@@ -22,3 +32,7 @@ A GitHub app that automatically follows all users that contribute to one of your
 ## 📧 Contact
 ### Email
 - Angelo Giacco | giacco.angelo.s@gmail.com
+
+## License
+
+[ISC](LICENSE) © 2019 Angelo Giacco <giacco.angelo.s@gmail.com> (https://github.com/friendzoner/friendzoner)
