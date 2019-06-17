@@ -4,9 +4,9 @@
   "description": "A probot app that allows a user to automatically follow users that contribute to their Github repos!",
   "author": "Angelo Giacco <giacco.angelo.s@gmail.com> (https://github.com/friendzoner/friendzoner)",
   "license": "ISC",
-  "repository": "https://github.com//friendzoner.git",
-  "homepage": "https://github.com//friendzoner",
-  "bugs": "https://github.com//friendzoner/issues",
+  "repository": "https://github.com//friendzoner/friendzoner.git",
+  "homepage": "https://github.com//friendzoner/friendzoner",
+  "bugs": "https://github.com//friendzoner/friendzoner/issues",
   "keywords": [
     "probot",
     "github",
