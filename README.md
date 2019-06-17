@@ -9,6 +9,13 @@
 
 >A GitHub app built with [Probot](https://github.com/probot/probot) that automatically follows all users that contribute to one of your repositories!
 
+## 👋 Contributing
+
+Want to help? We'd love 😍 to get you onboard!
+
+We are a pretty inexperienced group of high school students so we welcome contributions
+from anybody and everybody, but request you follow these guidelines when contributing. Check out our [contributing guide](https://github.com/friendzoner/friendzoner/blob/master/CONTRIBUTING.md)!
+
 ## Setup
 
 ```sh
@@ -24,7 +31,7 @@ npm start
 🇬🇧
 
 ## 🚀 Todo
-- [ ] register app
+- [x] register app
 - [ ] view repository contributors
 - [ ] follow contributors
 - [ ] allow customisation, e.g: follow only if a pull request is merged
@@ -35,4 +42,4 @@ npm start
 
 ## License
 
-[ISC](LICENSE) © 2019 Angelo Giacco <giacco.angelo.s@gmail.com> (https://github.com/friendzoner/friendzoner)
+[ISC](LICENSE) © 2019 Angelo Giacco <giacco.angelo.s@gmail.com> (https://friendzoner.github.io/friendzoner)
