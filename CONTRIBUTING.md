@@ -13,11 +13,11 @@ the project. View our [Code of Conduct](https://github.com/friendzoner/friendzon
 
 ## Workflow Protocol
 
-Please fork this project. 🍴
-Create a well-named branch. 🎋
-Commit your changes.
-Create a PR.
-Wait. Seriously wait, we're all at school studying so reviewing may take a while! 😂
+- Please fork this project. 🍴
+- Create a well-named branch. 🎋
+- Commit your changes.
+- Create a PR.
+- Wait. Seriously wait, we're all at school studying so reviewing may take a while! 😂
 
 ## Found a bug or requesting a feature?
 
@@ -35,4 +35,4 @@ Finally, the most helpful contributors will also be added to our organisation.
 ## Need help?
 
 We're newbies so I'm not sure how much help we will be,  but you can get in touch with any of us.
-Check out the list of (humans behind this project)[https://github.com/friendzoner/friendzoner/blob/master/humans.txt] in the humans.txt file.
+Check out the list of [humans behind this project](https://github.com/friendzoner/friendzoner/blob/master/humans.txt) in the humans.txt file.
