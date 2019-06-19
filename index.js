@@ -24,10 +24,12 @@ module.exports = app => {
       //get issues created by the creator of the opened issue
       const response = await context.github.issues.getForRepo(context.repo({
         state: 'all',
-        creator: context.payload.issue.user.login
+        creator: issue_creator_name
       }))
       //count how many issues
       const countIssue = response.data.length
+      app.log("count issue")
+      app.log(countIssue)
 
       //check it is their first issue
       if (countIssue === 1) {
@@ -35,6 +37,17 @@ module.exports = app => {
         //find if the user already follows them by checking the followers link
         //if creator of issue is not followed, makes a comment on the repo
         //otherwise does nothing
+
+        const config = await context.config('friendzoner.yml')
+        //check that the bot is enabled
+        app.log("config")
+        app.log(config.friendzone_enabled)
+        if (config.friendzone_enabled) {
+          app.log("enabled")
+        } else {
+          app.log("disabled")
+        }
+
       } else {
         app.log("not first issue")
       }

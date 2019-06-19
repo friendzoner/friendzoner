@@ -1,3 +1,11 @@
-#intially set to false, set to true to follow all contributors
+#set the following variables depending on what you want
 
-friendzone: false
+#check you follow the user when they make their first issue/PR
+friendzone_enabled: false
+
+#message that you want the bot to send to an unfollowed issue/PR
+#example might be: hey, thanks for contributing, i've recommended to @ownername that they follow you
+message: thanks for contributing! The owner will be following you shortly
+
+#this will automatically follow a new contributor
+auto-follow: false

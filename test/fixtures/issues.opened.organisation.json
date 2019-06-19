@@ -71,7 +71,7 @@
       "repos_url": "https://api.github.com/users/friendzoner/repos",
       "events_url": "https://api.github.com/users/friendzoner/events{/privacy}",
       "received_events_url": "https://api.github.com/users/friendzoner/received_events",
-      "type": "Organization",
+      "type": "Organisation",
       "site_admin": false
     },
     "html_url": "https://github.com/friendzoner/test-friendzoner-repo",
