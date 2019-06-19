@@ -27,11 +27,11 @@ module.exports = app => {
         creator: context.payload.issue.user.login
       }))
       //count how many issues
-      const countIssue = response.data.filter(data => !data.pull_request)
+      const countIssue = response.data.length
 
       //check it is their first issue
-      if (countIssue.length === 1) {
-        app.log("first issue")
+      if (countIssue === 1) {
+        app.log("first issue/PR")
         //find if the user already follows them by checking the followers link
         //if creator of issue is not followed, makes a comment on the repo
         //otherwise does nothing
