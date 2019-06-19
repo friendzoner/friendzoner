@@ -1,11 +1,13 @@
 #set the following variables depending on what you want
 
-#check you follow the user when they make their first issue/PR
+#check you follow the user when they make their first issue/PR, false means the bot will do nothing
 friendzone_enabled: false
+
+#this will automatically follow a new contributor, otherwise it will just give a recommendation
+auto_follow: false
 
 #message that you want the bot to send to an unfollowed issue/PR
 #example might be: hey, thanks for contributing, i've recommended to @ownername that they follow you
+#not sent if friendzone_enabled is set to false
+#should be altered based on the auto-follow variable
 message: thanks for contributing! The owner will be following you shortly
-
-#this will automatically follow a new contributor
-auto-follow: false

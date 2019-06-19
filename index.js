@@ -22,12 +22,12 @@ module.exports = app => {
       issue_creator_followers_link = issue_creator_dict.followers_url
 
       //get issues created by the creator of the opened issue
-      const response = await context.github.issues.getForRepo(context.repo({
+      const response = await context.github.issues.listForRepo(context.repo({
         state: 'all',
         creator: issue_creator_name
       }))
       //count how many issues
-      const countIssue = response.data.length
+      const countIssue = response.data.filter(data => !data.pull_request).length
       app.log("count issue")
       app.log(countIssue)
 
@@ -43,6 +43,11 @@ module.exports = app => {
         app.log("config")
         app.log(config.friendzone_enabled)
         if (config.friendzone_enabled) {
+          if (config.auto_follow) {
+            app.log("auto_follow")
+          } else {
+            app.log("no auto_follow")
+          }
           app.log("enabled")
         } else {
           app.log("disabled")
