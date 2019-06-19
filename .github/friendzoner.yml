@@ -10,4 +10,5 @@ auto_follow: false
 #example might be: hey, thanks for contributing, i've recommended to @ownername that they follow you
 #not sent if friendzone_enabled is set to false
 #should be altered based on the auto-follow variable
+# don't want a message, write message: false
 message: thanks for contributing! The owner will be following you shortly

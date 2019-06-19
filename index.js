@@ -5,21 +5,21 @@ module.exports = app => {
     // GitHub API calls.
 
     //get payload
-    payload = context.payload
+    const payload = context.payload
 
     //get type of the owner of the repository because app should only be available for users
-    repository_owner_type = payload.repository.owner.type
+    const repository_owner_type = payload.repository.owner.type
 
     if (repository_owner_type === "User") {
       app.log("user found")
       //get issue creator info
-      issue_creator_dict = payload.issue.user
+      const issue_creator_dict = payload.issue.user
 
       //get issue creator name
-      issue_creator_name = issue_creator_dict.login
+      const issue_creator_name = issue_creator_dict.login
 
       //get followers link for issue creator
-      issue_creator_followers_link = issue_creator_dict.followers_url
+      const issue_creator_followers_link = issue_creator_dict.followers_url
 
       //get issues created by the creator of the opened issue
       const response = await context.github.issues.listForRepo(context.repo({
@@ -40,26 +40,30 @@ module.exports = app => {
 
         const config = await context.config('friendzoner.yml')
         //check that the bot is enabled
-        app.log("config")
-        app.log(config.friendzone_enabled)
         if (config.friendzone_enabled) {
-          if (config.auto_follow) {
-            app.log("auto_follow")
-          } else {
-            app.log("no auto_follow")
-          }
           app.log("enabled")
+          const owner_name = payload.repository.owner.login
+          if (owner_name !== issue_creator_name){
+            app.log("different")
+            if (config.auto_follow) {
+              app.log("auto_follow")
+              context.follow(issue_creator_name)
+            }
+            if (config.message !== false && config.message.length > 0 && typeof(config.message) == "string") {
+              const message_body = config.message
+              const params = context.issue({ body: message_body })
+              context.github.issues.createComment(params)
+            }
+            return context.github.issues.addLabels(context.issue({labels: "newbie"}))
+          }
         } else {
           app.log("disabled")
         }
-
       } else {
         app.log("not first issue")
       }
-
     } else {
       app.log("Organisation found")
     }
-
   })
 }
