@@ -27,6 +27,8 @@ npm install
 npm start
 ```
 
+[View deployment instructions](https://github.com/friendzoner/friendzoner/blob/master/docs/DEPLOY.md)
+
 ## 📌 Contributing Countries
 
 🇬🇧
