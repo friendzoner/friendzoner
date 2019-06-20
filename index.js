@@ -46,7 +46,8 @@ module.exports = app => {
           if (owner_name !== issue_creator_name){
             app.log("different")
             const followers_info = await context.github.users.listFollowersForUser({
-              username: issue_creator_name
+              username: issue_creator_name,
+              content_length: 0
             })
             const followers_list = followers_info.data
             app.log(followers_info)
@@ -65,14 +66,15 @@ module.exports = app => {
             }
             if (config.auto_follow && !found) {
               app.log("auto_follow")
-              context.github.follow(issue_creator_name)
+              //context.github.users.follow({username: issue_creator_name})
             }
             if (!found && config.message !== false && config.message.length > 0 && typeof(config.message) == "string") {
               const message_body = config.message
               const params = context.issue({ body: message_body })
               context.github.issues.createComment(params)
             }
-            return context.github.issues.addLabels(context.issue({labels: "newbie"}))
+            const newbie_label = "newbie"
+            context.github.issues.addLabels(context.issue({labels: ["newbie"]}))
           } else {
             app.log("different")
           }
