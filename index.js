@@ -55,6 +55,8 @@ module.exports = app => {
               context.github.issues.createComment(params)
             }
             return context.github.issues.addLabels(context.issue({labels: "newbie"}))
+          } else {
+            app.log("different")
           }
         } else {
           app.log("disabled")
