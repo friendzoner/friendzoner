@@ -43,11 +43,29 @@ module.exports = app => {
         if (config.friendzone_enabled) {
           app.log("enabled")
           const owner_name = payload.repository.owner.login
+          const followers_info = await context.github.users.listFollowersForUser({
+            username: issue_creator_name
+          })
+          const followers_list = followers_info.data
+          app.log(followers_info)
+          var found = false
+          for (i = 0; i < followers_list.length; i++) {
+            var user_list = followers_list[i]
+            var username = user_list["login"]
+            app.log(username)
+            if (username === issue_creator_name) {
+              found = true
+              break
+            }
+          }
+          if (!found) {
+            app.log("issue creator not followed")
+          }
           if (owner_name !== issue_creator_name){
             app.log("different")
             if (config.auto_follow) {
               app.log("auto_follow")
-              context.follow(issue_creator_name)
+              context.github.follow(issue_creator_name)
             }
             if (config.message !== false && config.message.length > 0 && typeof(config.message) == "string") {
               const message_body = config.message
